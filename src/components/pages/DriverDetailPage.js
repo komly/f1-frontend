@@ -49,10 +49,11 @@ class DriverDetailPage extends Component {
             <div>Birthdate: {driver.dateOfBirth}</div>
             <a href={driver.url}>Wikipedia link</a>
 
+            <h3>Races</h3>
             <Table basic="very">
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Name</Table.HeaderCell>
+                  <Table.HeaderCell>Race name</Table.HeaderCell>
                   <Table.HeaderCell>Position</Table.HeaderCell>
                   <Table.HeaderCell>Season</Table.HeaderCell>
                   <Table.HeaderCell>Date</Table.HeaderCell>
