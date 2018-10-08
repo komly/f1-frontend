@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'semantic-ui-css/semantic.min.css';
+import { BrowserRouter, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import { Container, Menu } from 'semantic-ui-react';
+import DriverListPage from './components/pages/DriverListPage';
+import DriverDetailPage from './components/pages/DriverDetailPage';
+
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <Container>
+        <Menu secondary pointing>
+          <Menu.Item name="drivers" active={true} as={Link} to="/">
+            Drivers list
+          </Menu.Item>
+        </Menu>
+        <br />
+      </Container>
+      <Switch>
+        <Route exact path="/" component={DriverListPage} />
+        <Route path="/drivers/page/:page_num" component={DriverListPage} />
+        <Route path="/drivers/:driver_id" component={DriverDetailPage} />
+        <Route path="/drivers/:driver_id/page/:page_num" component={DriverDetailPage} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
