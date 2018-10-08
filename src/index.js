@@ -9,7 +9,7 @@ import DriverListPage from './components/pages/DriverListPage';
 import DriverDetailPage from './components/pages/DriverDetailPage';
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/f1-frontend">
     <div>
       <Container>
         <Menu secondary pointing>
