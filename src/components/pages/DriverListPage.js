@@ -1,43 +1,28 @@
 import React, { Component } from 'react';
 import { Container, Table, Pagination } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import api from '../../api';
+import { connect } from 'react-redux';
+import * as drivers from '../../actions/drivers';
 
 class DriverListPage extends Component {
-  state = {
-    loading: true,
-    drivers: [],
-    totalPages: 0,
-  };
-
   componentDidMount() {
-    const currentPage = this.props.match.params.page_num || 1;
-    this.loadDrivers(currentPage);
-  }
-  async loadDrivers(currentPage) {
-    this.setState({
-      currentPage,
-      loading: true,
-    });
-
-    api.driversList(currentPage).then(({ drivers, totalPages }) => {
-      this.setState({
-        drivers,
-        loading: false,
-        totalPages,
-      });
-    });
+    this.props.loadDrivers(this.getCurrentPage());
   }
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.page_num !== this.props.match.params.page_num) {
-      this.loadDrivers(newProps.match.params.page_num || 1);
+      this.props.loadDrivers(this.getCurrentPage());
     }
   }
   handlePageChange = pageNumber => {
     this.props.history.push(`/drivers/page/${pageNumber}`);
   };
+
+  getCurrentPage() {
+    return this.props.match.params.page_num || 1;
+  }
   render() {
-    const { drivers, totalPages, currentPage, loading } = this.state;
+    const { drivers, totalPages, loading } = this.props;
+    const currentPage = this.getCurrentPage();
     return (
       <Container>
         {loading && <div>Loading...</div>}
@@ -84,4 +69,14 @@ class DriverListPage extends Component {
   }
 }
 
-export default DriverListPage;
+const mapStateToProps = state => ({
+  drivers: state.drivers.drivers,
+  totalPages: state.drivers.totalPages,
+  loading: state.drivers.loading,
+  error: state.drivers.error,
+});
+
+export default connect(
+  mapStateToProps,
+  { loadDrivers: drivers.loadDrivers },
+)(DriverListPage);

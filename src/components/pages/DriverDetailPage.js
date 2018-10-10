@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
-import api from '../../api';
 import { Container, Table } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import * as drivers from '../../actions/drivers';
 
 class DriverDetailPage extends Component {
-  state = {
-    loading: true,
-    driver: null,
-    races: [],
-    currentPage: 0,
-    totalPages: 0,
-  };
-
   componentDidMount() {
-    this.loadDriverDetail(this.props.match.params.driver_id);
-  }
-  async loadDriverDetail(driverId, currentPage) {
-    this.setState({
-      currentPage,
-      loading: true,
-    });
-    api.loadDriverDetail(driverId).then(({ driver, races }) => {
-      this.setState({
-        driver,
-        races,
-        loading: false,
-      });
-    });
+    this.props.loadDriverDetail(this.props.match.params.driver_id);
   }
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.driver_id !== this.props.match.params.driver_id) {
@@ -36,7 +16,7 @@ class DriverDetailPage extends Component {
     this.props.history.push(`/drivers/pages/${pageNumber}`);
   };
   render() {
-    const { driver, races, loading } = this.state;
+    const { driver, loading } = this.props;
     return (
       <Container>
         {loading && <div>Loading...</div>}
@@ -63,17 +43,18 @@ class DriverDetailPage extends Component {
               </Table.Header>
 
               <Table.Body>
-                {races.map(race => (
-                  <Table.Row>
-                    <Table.Cell>{race.raceName}</Table.Cell>
-                    <Table.Cell>{race.round}</Table.Cell>
-                    <Table.Cell>{race.season}</Table.Cell>
-                    <Table.Cell>{race.date}</Table.Cell>
-                    <Table.Cell>
-                      <a href={race.url}>{race.url}</a>
-                    </Table.Cell>
-                  </Table.Row>
-                ))}
+                {driver.races &&
+                  driver.races.map(race => (
+                    <Table.Row>
+                      <Table.Cell>{race.raceName}</Table.Cell>
+                      <Table.Cell>{race.round}</Table.Cell>
+                      <Table.Cell>{race.season}</Table.Cell>
+                      <Table.Cell>{race.date}</Table.Cell>
+                      <Table.Cell>
+                        <a href={race.url}>{race.url}</a>
+                      </Table.Cell>
+                    </Table.Row>
+                  ))}
               </Table.Body>
             </Table>
           </div>
@@ -82,5 +63,20 @@ class DriverDetailPage extends Component {
     );
   }
 }
-
-export default DriverDetailPage;
+const mapStateToProps = (state, props) => {
+  const driver = state.drivers.drivers.find(driver => driver.driverId == props.match.params.driver_id);
+  if (driver) {
+    return {
+      loading: false,
+      driver,
+    };
+  }
+  return {
+    loading: true,
+    driver: driver,
+  };
+};
+export default connect(
+  mapStateToProps,
+  { loadDriverDetail: drivers.loadDriverDetail },
+)(DriverDetailPage);
