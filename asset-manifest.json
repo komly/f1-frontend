@@ -1,14 +1,14 @@
 {
-  "main.js": "/f1-frontend/static/js/main.78512f96.chunk.js",
-  "main.js.map": "/f1-frontend/static/js/main.78512f96.chunk.js.map",
-  "static/css/1.c1fae146.chunk.css": "/f1-frontend/static/css/1.c1fae146.chunk.css",
-  "static/js/1.fbd03d19.chunk.js": "/f1-frontend/static/js/1.fbd03d19.chunk.js",
-  "static/js/1.fbd03d19.chunk.js.map": "/f1-frontend/static/js/1.fbd03d19.chunk.js.map",
+  "main.js": "/f1-frontend/static/js/main.01efb968.chunk.js",
+  "main.js.map": "/f1-frontend/static/js/main.01efb968.chunk.js.map",
+  "static/css/1.98c0fb33.chunk.css": "/f1-frontend/static/css/1.98c0fb33.chunk.css",
+  "static/js/1.a8ecd2fb.chunk.js": "/f1-frontend/static/js/1.a8ecd2fb.chunk.js",
+  "static/js/1.a8ecd2fb.chunk.js.map": "/f1-frontend/static/js/1.a8ecd2fb.chunk.js.map",
   "runtime~main.js": "/f1-frontend/static/js/runtime~main.a82eded1.js",
   "runtime~main.js.map": "/f1-frontend/static/js/runtime~main.a82eded1.js.map",
   "static/media/semantic.min.css": "/f1-frontend/static/media/brand-icons.a1a749e8.svg",
-  "static/css/1.c1fae146.chunk.css.map": "/f1-frontend/static/css/1.c1fae146.chunk.css.map",
+  "static/css/1.98c0fb33.chunk.css.map": "/f1-frontend/static/css/1.98c0fb33.chunk.css.map",
   "index.html": "/f1-frontend/index.html",
-  "precache-manifest.01dc825da766bc07f2ac749601094ed3.js": "/f1-frontend/precache-manifest.01dc825da766bc07f2ac749601094ed3.js",
+  "precache-manifest.bc6bb460de972d1d6fdb388e6f5282dd.js": "/f1-frontend/precache-manifest.bc6bb460de972d1d6fdb388e6f5282dd.js",
   "service-worker.js": "/f1-frontend/service-worker.js"
 }

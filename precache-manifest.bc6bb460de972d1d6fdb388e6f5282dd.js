@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/f1-frontend/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "78512f96da872841807a",
-    "url": "/f1-frontend/static/js/main.78512f96.chunk.js"
+    "revision": "01efb968e5f35ec15e27",
+    "url": "/f1-frontend/static/js/main.01efb968.chunk.js"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -24,16 +24,16 @@ self.__precacheManifest = [
     "url": "/f1-frontend/static/media/outline-icons.ef60a4f6.woff"
   },
   {
+    "revision": "9c74e172f87984c48ddf5c8108cabe67",
+    "url": "/f1-frontend/static/media/flags.9c74e172.png"
+  },
+  {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
     "url": "/f1-frontend/static/media/outline-icons.701ae6ab.eot"
   },
   {
     "revision": "ad97afd3337e8cda302d10ff5a4026b8",
     "url": "/f1-frontend/static/media/outline-icons.ad97afd3.ttf"
-  },
-  {
-    "revision": "9c74e172f87984c48ddf5c8108cabe67",
-    "url": "/f1-frontend/static/media/flags.9c74e172.png"
   },
   {
     "revision": "0ab54153eeeca0ce03978cc463b257f7",
@@ -52,12 +52,12 @@ self.__precacheManifest = [
     "url": "/f1-frontend/static/media/brand-icons.a046592b.woff"
   },
   {
-    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
-    "url": "/f1-frontend/static/media/icons.8e3c7f55.eot"
-  },
-  {
     "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
     "url": "/f1-frontend/static/media/icons.b87b9ba5.ttf"
+  },
+  {
+    "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
+    "url": "/f1-frontend/static/media/icons.8e3c7f55.eot"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
@@ -72,15 +72,15 @@ self.__precacheManifest = [
     "url": "/f1-frontend/static/media/outline-icons.82f60bd0.svg"
   },
   {
-    "revision": "fbd03d190f4340a6e649",
-    "url": "/f1-frontend/static/js/1.fbd03d19.chunk.js"
+    "revision": "a8ecd2fbbfacf9f9ebf5",
+    "url": "/f1-frontend/static/js/1.a8ecd2fb.chunk.js"
   },
   {
-    "revision": "fbd03d190f4340a6e649",
-    "url": "/f1-frontend/static/css/1.c1fae146.chunk.css"
+    "revision": "a8ecd2fbbfacf9f9ebf5",
+    "url": "/f1-frontend/static/css/1.98c0fb33.chunk.css"
   },
   {
-    "revision": "5f51f519bec4546150cbd7aa4270b4a3",
+    "revision": "f5ba573f2df5d25879331fa6e66a469b",
     "url": "/f1-frontend/index.html"
   }
 ];
