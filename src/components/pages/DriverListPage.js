@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Table, Pagination } from 'semantic-ui-react';
+import { Container, Table, Pagination, Message } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as drivers from '../../actions/drivers';
@@ -21,11 +21,17 @@ class DriverListPage extends Component {
     return this.props.match.params.page_num || 1;
   }
   render() {
-    const { drivers, totalPages, loading } = this.props;
+    const { drivers, totalPages, loading, error } = this.props;
     const currentPage = this.getCurrentPage();
     return (
       <Container>
         {loading && <div>Loading...</div>}
+        {error && (
+          <Message error>
+            <p>{error}</p>
+          </Message>
+        )}
+
         {!loading && (
           <div>
             <Table basic="very">
